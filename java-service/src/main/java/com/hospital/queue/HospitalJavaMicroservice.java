@@ -9,11 +9,13 @@ import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 
 public class HospitalJavaMicroservice {
-    private static final int PORT = 8085;
+    private static final int PORT = Integer.parseInt(
+    System.getenv().getOrDefault("PORT", "8085")
+);
     private static final PriorityTriageDispatcher dispatcher = new PriorityTriageDispatcher();
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress("127.0.0.1", PORT), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", PORT), 0);
 
         // 1. Health & JVM Diagnostics
         server.createContext("/api/java/health", exchange -> {
@@ -162,7 +164,7 @@ public class HospitalJavaMicroservice {
 
         server.setExecutor(java.util.concurrent.Executors.newVirtualThreadPerTaskExecutor());
         server.start();
-        System.out.println("Java Hospital Queue Microservice listening on http://127.0.0.1:" + PORT);
+        System.out.println("Java Hospital Queue Microservice listening on port " + PORT);
     }
 
     private static String getEsiLabel(int level) {
