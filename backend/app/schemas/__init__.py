@@ -1,0 +1,42 @@
+from backend.app.schemas.hospital_schemas import (
+    LoginRequest,
+    RegisterPatientRequest,
+    RegisterStaffRequest,
+    ForgotPasswordRequest,
+    PatientProfileOut,
+    UserOut,
+    TokenResponse,
+    DepartmentCreate,
+    DepartmentOut,
+    DoctorCreate,
+    DoctorOut,
+    DoctorStatusUpdate,
+    AppointmentCreate,
+    AppointmentOut,
+    TokenGenerateRequest,
+    TokenOut,
+    TokenActionRequest,
+    LiveQueueDoctorSummary,
+    HospitalActivityStats
+)
+
+__all__ = [
+    "LoginRequest",
+    "RegisterPatientRequest",
+    "ForgotPasswordRequest",
+    "PatientProfileOut",
+    "UserOut",
+    "TokenResponse",
+    "DepartmentCreate",
+    "DepartmentOut",
+    "DoctorCreate",
+    "DoctorOut",
+    "DoctorStatusUpdate",
+    "AppointmentCreate",
+    "AppointmentOut",
+    "TokenGenerateRequest",
+    "TokenOut",
+    "TokenActionRequest",
+    "LiveQueueDoctorSummary",
+    "HospitalActivityStats"
+]

@@ -1,0 +1,11 @@
+
+# Java Maven
+java-service/target/
+*.class
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment variables
+.env
